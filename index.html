@@ -1,19 +1,34 @@
 <body>
-    <input type="text" id="input">
-    <span></span>
+    <style>
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+    </style>
+    <form name="myForm" id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <div class="error" id="name-error"></div>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <div class="error" id="email-error"></div>
+
+        <button type="submit">Enviar</button>
+    </form>
 
     <script>
-        const input = document.querySelector('#input');
-        const span = document.querySelector('span');
-
-        let myTimeout;
-        input.addEventListener('keyup', function () {
-            clearTimeout(myTimeout);
-            myTimeout = setTimeout(() => {
-                span.innerText = input.value;
-                console.log(input.value);
-            }, 2000);
-        });
-
+        const form = document.forms.myForm;
+        const inputName = form.name;
+        const inputEmail = form.email
+        console.log(form)
+        console.log(inputName)
+        console.log(inputEmail)
     </script>
 </body>
