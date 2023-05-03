@@ -6,39 +6,21 @@
     </ul>
 
     <script>
-        const ul = document.querySelector("ul");
-        const li = document.querySelector("li");
-        const input = document.querySelector('input');
 
-        ul.addEventListener('click', function () {
-            console.log(this);
-        });
+        const myTimeout = setTimeout(() => {
+            console.log('executou setTimeout');
+        }, 0);
+        clearTimeout(myTimeout);
 
+        const myInterval = setInterval(function () {
+            console.log("executou setInterval");
+        }, 0);
 
-        li.addEventListener("click", function (event) {
-            event.stopPropagation();
-            console.log(event.target.innerText);
-        })
+        setTimeout(() => {
 
-        input.addEventListener('contextmenu', function (event) {
-            event.preventDefault();
-            console.log(event);
-        })
+            clearInterval(myInterval)
+        }, 2000);
 
-
-        input.addEventListener('keyup', function (event) {
-            event.preventDefault();
-            const KEY_ENTER = 13;
-            if (event.keyCode === KEY_ENTER) {
-                console.log(this.value);
-                if (this.value === '') {
-                    this.style.backgroundColor = 'red';
-                } else {
-                    this.style.backgroundColor = 'green';
-                }
-
-            }
-        })
 
     </script>
 </body>
