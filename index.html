@@ -1,8 +1,8 @@
 <body>
     <style>
         body {
-            height: 2000px;
-            width: 2000px;
+            /* height: 2000px;
+            width: 2000px; */
         }
 
         #info {
@@ -15,31 +15,46 @@
             border-radius: 5px;
             padding: 5px 10px;
         }
+
+        p {
+            font-size: 25px;
+        }
     </style>
-    <div id="info">Informações serão exibidas aqui.</div>
+    <div id="info">
+        <p>
+            Informações serão exibidas aqui.
+        </p>
+        <p>
+            Informações serão exibidas aqui.
+        </p>
+    </div>
 
     <script>
-        const info = document.querySelector('#info');
+        const info = document.querySelectorAll('p');
 
-        window.addEventListener('resize', function () {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            info.textContent = `A janela foi redimensionada para X:${width} Y${height}`
+
+        window.addEventListener("touchstart", function (event) {
+            const touchCount = event.touches.length;
+
+            info[0].textContent = `Toque iniciado. Número de dedos tocados a tela ${touchCount}`;
         });
 
-        window.addEventListener("scroll", function () {
-            const scrollTop = window.pageYOffset;
-            const scrollX = window.pageXOffset;
+        window.addEventListener("touchend", function (event) {
+            const touchCount = event.touches.length;
 
-            info.textContent = `A página foi rolada para a posição y: ${scrollTop} x: ${scrollX}`;
+            info[1].textContent = `Toque finalizado. Número de dedos tocando a tela: ${touchCount}.`;
         });
 
 
-        window.addEventListener('mousemove', function (event) {
-            const x = event.clientX;
-            const y = event.clientY;
 
-            info.textContent = `Posição do mouse: X:${x} Y:${y}`;
-        })
+        // window.addEventListener("touchmove", function (event) {
+        //     const touch = event.touches[0];
+        //     const x = touch.clientX;
+        //     const y = touch.clientY;
+
+        //     info.textContent = `Toque movendo. Posição: X: ${x}px, Y: ${y}px.`;
+        // });
+
+
     </script>
 </body>
