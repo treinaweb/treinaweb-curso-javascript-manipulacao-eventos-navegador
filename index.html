@@ -1,27 +1,47 @@
 <body>
+    <style>
+        .draggable {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    <h1>Ciclo de vida</h1>
+        .dropzone {
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <div id="draggable" class="draggable" draggable="true">Arraste-me</div>
+    <div id="dropzone" class="dropzone">Solte aqui</div>
     <script>
+        const draggable = document.querySelector("#draggable");
+        const dropzone = document.querySelector("#dropzone");
 
+        draggable.addEventListener('dragstart', function (event) {
+            console.log("dragstart");
+            event.dataTransfer.setData("text/plain", event.target.id);
+        })
 
-        // DOMContentLoaded
-        document.addEventListener('DOMContentLoaded', function () {
-            console.log("O HTML da página foi completamente carregado e analisado");
+        dropzone.addEventListener('dragover', function (event) {
+            console.log("dragover");
+            event.preventDefault();
         });
 
-        // load
-        window.addEventListener('load', function () {
-            console.log("A página inteira e todos os seus recursos externos foram carregados.");
-        });
+        dropzone.addEventListener('drop', function (event) {
+            console.log("drop");
+            event.preventDefault();
+            const draggableId = event.dataTransfer.getData('text/plain');
+            const draggableElement = document.getElementById(draggableId)
 
-        // pageshow
-        window.addEventListener("pageshow", function (event) {
-            console.log("A página foi carregada. Persistência do cache:", event.persisted);
-        });
+            dropzone.appendChild(draggableElement);
 
-
-        window.addEventListener("pagehide", function (event) {
-            console.log("A janela está sendo fechada ou o usuário está navegando para outra página.");
         });
 
     </script>
