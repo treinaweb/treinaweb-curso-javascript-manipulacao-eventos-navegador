@@ -1,48 +1,88 @@
 <body>
     <style>
-        .draggable {
-            width: 100px;
-            height: 100px;
-            background-color: red;
+        .controls {
             display: flex;
-            align-items: center;
             justify-content: center;
+            gap: 10px;
         }
 
-        .dropzone {
-            width: 300px;
-            height: 300px;
-            background-color: lightblue;
+        .container {
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        video {
+            margin-bottom: 20px;
         }
     </style>
-    <div id="draggable" class="draggable" draggable="true">Arraste-me</div>
-    <div id="dropzone" class="dropzone">Solte aqui</div>
+
+    <div class="container">
+        <video id="video" width="320" height="240" controls>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+        <div class="controls">
+            <button id="play">Play</button>
+            <button id="pause">Pause</button>
+            <button id="stop">Stop</button>
+        </div>
+    </div>
+
+
     <script>
-        const draggable = document.querySelector("#draggable");
-        const dropzone = document.querySelector("#dropzone");
+        const video = document.querySelector("#video");
+        const playButton = document.querySelector("#play");
+        const pauseButton = document.querySelector("#pause");
+        const stopButton = document.querySelector("#stop");
 
-        draggable.addEventListener('dragstart', function (event) {
-            console.log("dragstart");
-            event.dataTransfer.setData("text/plain", event.target.id);
-        })
 
-        dropzone.addEventListener('dragover', function (event) {
-            console.log("dragover");
-            event.preventDefault();
+        video.addEventListener('play', function () {
+            console.log("A reprodução do vídeo foi inicializada");
         });
 
-        dropzone.addEventListener('drop', function (event) {
-            console.log("drop");
-            event.preventDefault();
-            const draggableId = event.dataTransfer.getData('text/plain');
-            const draggableElement = document.getElementById(draggableId)
-
-            dropzone.appendChild(draggableElement);
-
+        playButton.addEventListener("click", function () {
+            video.play();
         });
+
+
+        video.addEventListener("pause", function () {
+            console.log("A reprodução do vídeo foi pausada.");
+        });
+
+        pauseButton.addEventListener("click", function () {
+            video.pause();
+        });
+
+
+        video.addEventListener("ended", function () {
+            console.log("A reprodução do vídeo chegou ao fim.");
+        });
+
+        stopButton.addEventListener("click", function () {
+            video.pause();
+            video.currentTime = 0;
+        });
+
+
+        // video.addEventListener("timeupdate", function () {
+        //     console.log("Tempo atual do vídeo:", video.currentTime);
+        // });
+
+
+        video.addEventListener("volumechange", function () {
+            console.log("Volume atual do vídeo:", video.volume);
+        });
+
+        video.addEventListener("seeking", function () {
+            console.log("Buscando nova posição de reprodução no vídeo");
+        });
+
+        video.addEventListener("seeked", function () {
+            console.log("Nova posição de reprodução no vídeo definida:", video.currentTime);
+        });
+
 
     </script>
 </body>
