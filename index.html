@@ -1,60 +1,41 @@
-<body>
+<!DOCTYPE html>
+<html>
+
+<head>
     <style>
-        body {
-            /* height: 2000px;
-            width: 2000px; */
-        }
-
         #info {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-            border-radius: 5px;
-            padding: 5px 10px;
-        }
-
-        p {
-            font-size: 25px;
+            font-family: Arial, sans-serif;
+            margin-top: 20px;
         }
     </style>
-    <div id="info">
-        <p>
-            Informações serão exibidas aqui.
-        </p>
-        <p>
-            Informações serão exibidas aqui.
-        </p>
-    </div>
+</head>
 
+<body>
+    <label for="input1">Campo 1:</label>
+    <input type="text" id="input">
+    <div id="info">Navegue pelos campos de entrada para ver informações sobre eventos de acessibilidade.</div>
     <script>
-        const info = document.querySelectorAll('p');
+        const input = document.getElementById("input");
 
+        const info = document.getElementById("info");
 
-        window.addEventListener("touchstart", function (event) {
-            const touchCount = event.touches.length;
+        // Função para lidar com eventos 'focus' e 'blur'
+        function handleFocusBlur(event) {
+            const eventType = event.type;
+            const elementId = event.target.id;
 
-            info[0].textContent = `Toque iniciado. Número de dedos tocados a tela ${touchCount}`;
-        });
+            if (eventType === "focus") {
+                info.textContent = `O campo '${elementId}' recebeu o foco.`;
+            } else if (eventType === "blur") {
+                info.textContent = `O campo '${elementId}' perdeu o foco.`;
+            }
+        }
 
-        window.addEventListener("touchend", function (event) {
-            const touchCount = event.touches.length;
-
-            info[1].textContent = `Toque finalizado. Número de dedos tocando a tela: ${touchCount}.`;
-        });
-
-
-
-        // window.addEventListener("touchmove", function (event) {
-        //     const touch = event.touches[0];
-        //     const x = touch.clientX;
-        //     const y = touch.clientY;
-
-        //     info.textContent = `Toque movendo. Posição: X: ${x}px, Y: ${y}px.`;
-        // });
-
+        // Adiciona ouvintes de eventos 'focus' e 'blur' aos campos de entrada
+        input.addEventListener("focus", handleFocusBlur);
+        input.addEventListener("blur", handleFocusBlur);
 
     </script>
 </body>
+
+</html>
