@@ -1,0 +1,15 @@
+Aula | Video | Commit | Link
+------ | ------ | ------ | ------
+Aula 02 | Vídeo 02 - Criando Listeners | 02:02 - Criando Listeners | [Download](https://github.com/treinaweb/treinaweb-curso-javascript-manipulacao-eventos-navegador/archive/c30fd2f9ad36fa495f346f9865694587646cc6be.zip)
+Aula 02 | Vídeo 03 - A propagação de eventos e comportamentos padrões | 02:03 - A propagação de eventos e comportamentos padrões | [Download](https://github.com/treinaweb/treinaweb-curso-javascript-manipulacao-eventos-navegador/archive/9194110fdf5d3411ac300aa3acd9c9007bd34ff0.zip)
+Aula 02 | Vídeo 04 - O Objeto Event | 02:04 - O Objeto Event | [Download](https://github.com/treinaweb/treinaweb-curso-javascript-manipulacao-eventos-navegador/archive/fc671fbbcab336d6cf87e24a3b760dde524678ff.zip)
+Aula 02 | Vídeo 05 - Timers | 02:05 - Timers | [Download](https://github.com/treinaweb/treinaweb-curso-javascript-manipulacao-eventos-navegador/archive/927c0e191c53f165d2f005661b1fdac769c8fd0d.zip)
+Aula 02 | Vídeo 06 - Debouncing | 02:06 - Debouncing | [Download](https://github.com/treinaweb/treinaweb-curso-javascript-manipulacao-eventos-navegador/archive/1cb2def7b33715cdc7a78cd7725b117a3132a9ca.zip)
+Aula 02 | Vídeo 07 - Validando Formulários | 02:07 - Validando Formulários | [Download](https://github.com/treinaweb/treinaweb-curso-javascript-manipulacao-eventos-navegador/archive/358139afa8c4a0cca46062523220576c05e4995f.zip)
+Aula 03 | Vídeo 08 - Eventos de ciclo de vida | 03:08 - Eventos de ciclo de vida | [Download](https://github.com/treinaweb/treinaweb-curso-javascript-manipulacao-eventos-navegador/archive/e8e97e6ea86681585001273b7400738198b00a7c.zip)
+Aula 03 | Vídeo 09 - Eventos de Arrastar e Soltar (Drag and Drop) | 03:09 - Eventos de Arrastar e Soltar (Drag and Drop) | [Download](https://github.com/treinaweb/treinaweb-curso-javascript-manipulacao-eventos-navegador/archive/2dad97133d4ea28ab32e7ad0641b10239d161735.zip)
+Aula 03 | Vídeo 10 - Eventos de Mídia | 03:10 - Eventos de Mídia | [Download](https://github.com/treinaweb/treinaweb-curso-javascript-manipulacao-eventos-navegador/archive/282fa9955e17025ec6c0600517e6c89b8ebc2868.zip)
+Aula 03 | Vídeo 11 - Eventos de janela e de Rolagem | 03:11 - Eventos de janela e de Rolagem | [Download](https://github.com/treinaweb/treinaweb-curso-javascript-manipulacao-eventos-navegador/archive/05b51973e898a605a75a4f11db64f14d8f6c46a8.zip)
+Aula 03 | Vídeo 12 - Eventos Touch e Gestos | 03:12 - Eventos Touch e Gestos | [Download](https://github.com/treinaweb/treinaweb-curso-javascript-manipulacao-eventos-navegador/archive/5fe44084fbbce17479350025e5f3fe2386d8c170.zip)
+Aula 03 | Vídeo 13 - Eventos de Input | 03:13 - Eventos de Input | [Download](https://github.com/treinaweb/treinaweb-curso-javascript-manipulacao-eventos-navegador/archive/edd6e31716b05bfd017e7f31191d0ea24e7ccbc4.zip)
+Aula 04 | Vídeo 14 - Galeria de Imagens | 04:14 - Galeria de Imagens | [Download](https://github.com/treinaweb/treinaweb-curso-javascript-manipulacao-eventos-navegador/archive/498131106e27642fbfdfd7b2f48babfd4c7465f0.zip)
