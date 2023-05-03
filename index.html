@@ -17,12 +17,28 @@
 
         li.addEventListener("click", function (event) {
             event.stopPropagation();
-            console.log(this);
+            console.log(event.target.innerText);
         })
 
         input.addEventListener('contextmenu', function (event) {
             event.preventDefault();
-            console.log(this);
+            console.log(event);
         })
+
+
+        input.addEventListener('keyup', function (event) {
+            event.preventDefault();
+            const KEY_ENTER = 13;
+            if (event.keyCode === KEY_ENTER) {
+                console.log(this.value);
+                if (this.value === '') {
+                    this.style.backgroundColor = 'red';
+                } else {
+                    this.style.backgroundColor = 'green';
+                }
+
+            }
+        })
+
     </script>
 </body>
