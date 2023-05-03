@@ -1,26 +1,19 @@
 <body>
     <input type="text" id="input">
-    <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-    </ul>
+    <span></span>
 
     <script>
+        const input = document.querySelector('#input');
+        const span = document.querySelector('span');
 
-        const myTimeout = setTimeout(() => {
-            console.log('executou setTimeout');
-        }, 0);
-        clearTimeout(myTimeout);
-
-        const myInterval = setInterval(function () {
-            console.log("executou setInterval");
-        }, 0);
-
-        setTimeout(() => {
-
-            clearInterval(myInterval)
-        }, 2000);
-
+        let myTimeout;
+        input.addEventListener('keyup', function () {
+            clearTimeout(myTimeout);
+            myTimeout = setTimeout(() => {
+                span.innerText = input.value;
+                console.log(input.value);
+            }, 2000);
+        });
 
     </script>
 </body>
