@@ -1,36 +1,28 @@
 <body>
-    <style>
-        label {
-            display: block;
-            margin-top: 10px;
-        }
 
-        .error {
-            color: red;
-            font-size: 0.8rem;
-            margin-top: 5px;
-        }
-    </style>
-    <form name="myForm" id="contact-form">
-        <label for="name">Name:</label>
-        <input type="text" id="name">
-        <div class="error" id="name-error"></div>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" required>
-        <div class="error" id="email-error"></div>
-
-        <button type="submit">Enviar</button>
-    </form>
-
+    <h1>Ciclo de vida</h1>
     <script>
-        const form = document.forms.myForm;
-        form.addEventListener("submit", function (event) {
-            event.preventDefault();
-            const isValid = form.checkValidity();
-            if (isValid) {
-                console.log("Formulário enviado com sucesso");
-            }
+
+
+        // DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log("O HTML da página foi completamente carregado e analisado");
         });
+
+        // load
+        window.addEventListener('load', function () {
+            console.log("A página inteira e todos os seus recursos externos foram carregados.");
+        });
+
+        // pageshow
+        window.addEventListener("pageshow", function (event) {
+            console.log("A página foi carregada. Persistência do cache:", event.persisted);
+        });
+
+
+        window.addEventListener("pagehide", function (event) {
+            console.log("A janela está sendo fechada ou o usuário está navegando para outra página.");
+        });
+
     </script>
 </body>
