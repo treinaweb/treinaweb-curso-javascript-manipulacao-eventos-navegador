@@ -1,0 +1,26 @@
+<body>
+    <input type="text" id="input">
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+    <script>
+        const ul = document.querySelector("ul");
+
+        function myFunction() {
+            console.log("elemento clicado");
+        }
+
+        ul.addEventListener('click', myFunction);
+
+        ul.removeEventListener("click", myFunction)
+
+        const input = document.querySelector("#input");
+
+        input.addEventListener('keyup', function () {
+            console.log(this)
+        });
+
+    </script>
+</body>
