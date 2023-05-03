@@ -25,10 +25,12 @@
 
     <script>
         const form = document.forms.myForm;
-        const inputName = form.name;
-        const inputEmail = form.email
-        console.log(form)
-        console.log(inputName)
-        console.log(inputEmail)
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const isValid = form.checkValidity();
+            if (isValid) {
+                console.log("Formulário enviado com sucesso");
+            }
+        });
     </script>
 </body>
